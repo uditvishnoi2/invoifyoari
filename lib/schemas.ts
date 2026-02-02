@@ -141,7 +141,7 @@ const ShippingDetailsSchema = z.object({
 const SignatureSchema = z.object({
     data: fieldValidators.string,
     fontFamily: fieldValidators.string.optional(),
-});
+}).optional();
 
 const InvoiceDetailsSchema = z.object({
     invoiceLogo: fieldValidators.stringOptional,

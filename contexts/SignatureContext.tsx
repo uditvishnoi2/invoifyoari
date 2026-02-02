@@ -95,7 +95,10 @@ export const SignatureContextProvider = ({
         if (signatureRef.current) {
             signatureRef.current.clear();
             setSignatureData("");
-            setValue("details.signature", "");
+            setValue("details.signature", undefined, {
+              shouldDirty: true,
+            shouldValidate: true,
+            });
         }
     }, []);
 
