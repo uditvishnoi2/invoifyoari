@@ -117,9 +117,9 @@ const ItemSchema = z.object({
 });
 
 const PaymentInformationSchema = z.object({
-    bankName: fieldValidators.stringMin1,
-    accountName: fieldValidators.stringMin1,
-    accountNumber: fieldValidators.stringMin1,
+    bankName: fieldValidators.stringOptional,
+    accountName: fieldValidators.stringOptional,
+    accountNumber: fieldValidators.stringOptional,
 });
 
 const DiscountDetailsSchema = z.object({
@@ -160,7 +160,7 @@ const InvoiceDetailsSchema = z.object({
     totalAmount: fieldValidators.nonNegativeNumber,
     totalAmountInWords: fieldValidators.string,
     additionalNotes: fieldValidators.stringOptional,
-    paymentTerms: fieldValidators.stringMin1,
+    paymentTerms: fieldValidators.stringOptional,
     signature: SignatureSchema.optional(),
     updatedAt: fieldValidators.stringOptional,
     pdfTemplate: z.number(),

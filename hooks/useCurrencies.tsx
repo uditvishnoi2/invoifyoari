@@ -19,9 +19,13 @@ const useCurrencies = () => {
         setCurrenciesLoading(true);
 
         try {
-            const response = await fetch(`${CURRENCIES_API}`);
-            const data = await response.json();
-
+            // const response = await fetch(`${CURRENCIES_API}`);
+            // const data = await response.json();
+            const data: Record<string, string> = {
+                "₹": "Indian Rupee",
+                "€": "Euro",
+                "$": "US Dollar",
+                "AED": "UAE Dirham"}
             const currencyOptions = Object.keys(data).map((currencyCode) => {
                 const currencyName = data[currencyCode];
                 return { code: currencyCode, name: currencyName };

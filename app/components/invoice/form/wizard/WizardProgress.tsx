@@ -36,9 +36,9 @@ const WizardProgress = ({ wizard }: WizardProgressProps) => {
         !errors.details?.currency;
 
     const step3Valid = !errors.details?.items;
-    const step4Valid = !errors.details?.paymentInformation;
-    const step5Valid =
-        !errors.details?.paymentTerms &&
+    // const step4Valid = !errors.details?.paymentInformation;
+    const step4Valid =
+        // !errors.details?.paymentTerms &&
         !errors.details?.subTotal &&
         !errors.details?.totalAmount &&
         !errors.details?.discountDetails?.amount &&
@@ -90,15 +90,15 @@ const WizardProgress = ({ wizard }: WizardProgressProps) => {
             label: _t("form.wizard.lineItems"),
             isValid: step3Valid,
         },
+        // {
+        //     id: 3,
+        //     label: _t("form.wizard.paymentInfo"),
+        //     isValid: step4Valid,
+        // },
         {
             id: 3,
-            label: _t("form.wizard.paymentInfo"),
-            isValid: step4Valid,
-        },
-        {
-            id: 4,
             label: _t("form.wizard.summary"),
-            isValid: step5Valid,
+            isValid: step4Valid,
         },
     ];
 
