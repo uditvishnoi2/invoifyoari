@@ -53,7 +53,9 @@
                 "heading": "Informazioni sul pagamento",
                 "bankName": "Nome della banca",
                 "accountName": "Intestatario del conto",
-                "accountNumber": "Numero Conto"
+                "accountNumber": "Numero Conto",
+                "ifscCode": "Codice IFSC",
+                "branchAddress": "Indirizzo Filiale"
             },
             "summary": {
                 "heading": "Sintesi",

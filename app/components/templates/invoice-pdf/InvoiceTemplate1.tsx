@@ -310,13 +310,14 @@ const InvoiceTemplate = (data: InvoiceType) => {
                                         Bank:{" "}
                                         {details.paymentInformation?.bankName}
                                     </p>
-                                    <p className="text-sm">
-                                        Account name:{" "}
-                                        {
-                                            details.paymentInformation
-                                                ?.accountName
-                                        }
-                                    </p>
+                                    {details.paymentInformation?.accountName && (
+                                        <p className="text-sm">
+                                            Account name:{" "}
+                                            {
+                                                details.paymentInformation
+                                                    ?.accountName
+                                            }
+                                    </p>)}
                                     <p className="text-sm">
                                         Account no:{" "}
                                         {
@@ -324,6 +325,23 @@ const InvoiceTemplate = (data: InvoiceType) => {
                                                 ?.accountNumber
                                         }
                                     </p>
+                                    {details.paymentInformation
+                                                ?.ifscCode && (
+                                        <p className="text-sm">
+                                            IFSC Code:{" "}
+                                            {
+                                                details.paymentInformation
+                                                    ?.ifscCode
+                                            }
+                                    </p>)}
+                                    {details.paymentInformation?.branchAddress && (
+                                        <p className="text-sm">
+                                            Branch Address:{" "}
+                                            {
+                                                details.paymentInformation
+                                                    ?.branchAddress
+                                            }
+                                    </p>)}
                                 </span>
                             </div>
                         )}

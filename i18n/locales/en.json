@@ -54,7 +54,9 @@
                 "heading": "Payment Information",
                 "bankName": "Bank Name",
                 "accountName": "Account Name",
-                "accountNumber": "Account Number"
+                "accountNumber": "Account Number",
+                "ifscCode": "IFSC Code",
+                "branchAddress": "Branch Address"
             },
             "summary": {
                 "heading": "Summary",
