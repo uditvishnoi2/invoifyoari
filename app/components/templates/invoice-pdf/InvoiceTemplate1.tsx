@@ -118,16 +118,19 @@ const InvoiceTemplate = (data: InvoiceType) => {
             <div className="mt-3">
                 <div className="border border-gray-200 p-1 rounded-lg space-y-1">
                     <div className="hidden sm:grid sm:grid-cols-5">
-                        <div className="sm:col-span-2 text-xs font-medium text-gray-500 uppercase">
+                        <div className="text-left text-xs font-medium text-gray-500">
                             Item
                         </div>
-                        <div className="text-left text-xs font-medium text-gray-500 uppercase">
-                            Qty
+                        <div className="text-left text-xs font-medium text-gray-500">
+                            HSN/SAC
                         </div>
-                        <div className="text-left text-xs font-medium text-gray-500 uppercase">
+                        <div className="text-left text-xs font-medium text-gray-500">
+                            Quantity
+                        </div>
+                        <div className="text-left text-xs font-medium text-gray-500">
                             Rate
                         </div>
-                        <div className="text-right text-xs font-medium text-gray-500 uppercase">
+                        <div className="text-right text-xs font-medium text-gray-500">
                             Amount
                         </div>
                     </div>
@@ -138,18 +141,29 @@ const InvoiceTemplate = (data: InvoiceType) => {
 
                             return (
                                 <React.Fragment key={index}>
-                                    <div
-                                        className={`col-span-full sm:col-span-2 ${
+                                   <div
+                                        className={
                                             !isLast
                                                 ? "border-b border-gray-300"
                                                 : ""
-                                        }`}
+                                        }
                                     >
                                         <p className="font-medium text-gray-800">
                                             {item.name}
                                         </p>
                                         <p className="text-xs text-gray-600 whitespace-pre-line">
                                             {item.description}
+                                        </p>
+                                    </div>
+                                    <div
+                                        className={
+                                            !isLast
+                                                ? "border-b border-gray-300"
+                                                : ""
+                                        }
+                                    >
+                                        <p className="text-gray-800">
+                                            {item.hsn ? item.hsn : "-"}
                                         </p>
                                     </div>
                                     <div

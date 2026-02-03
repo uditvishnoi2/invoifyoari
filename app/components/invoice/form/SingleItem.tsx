@@ -165,6 +165,14 @@ const SingleItem = ({
                 />
 
                 <FormInput
+                    name={`${name}[${index}].hsn`}
+                    label={_t("form.steps.lineItems.hsn")}
+                    placeholder={_t("form.steps.lineItems.hsn")}
+                    className="w-[8rem]"
+                    vertical
+                />
+
+                <FormInput
                     name={`${name}[${index}].quantity`}
                     type="number"
                     label={_t("form.steps.lineItems.quantity")}

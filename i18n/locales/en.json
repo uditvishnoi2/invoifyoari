@@ -43,6 +43,7 @@
                 "item": "Item",
                 "name": "Name",
                 "quantity": "Quantity",
+                "hsn": "HSN/SAC",
                 "rate": "Rate",
                 "total": "Total",
                 "description": "Description",

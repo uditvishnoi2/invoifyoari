@@ -111,6 +111,7 @@ const InvoiceReceiverSchema = z.object({
 const ItemSchema = z.object({
     name: fieldValidators.stringMin1,
     description: fieldValidators.stringOptional,
+    hsn: fieldValidators.stringOptional,
     quantity: fieldValidators.quantity,
     unitPrice: fieldValidators.unitPrice,
     total: fieldValidators.stringToNumber,

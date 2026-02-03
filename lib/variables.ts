@@ -147,6 +147,7 @@ export const FORM_DEFAULT_VALUES = {
         name: "",
         description: "",
         quantity: 0,
+        hsn: "-",
         unitPrice: 0,
         total: 0,
       },
