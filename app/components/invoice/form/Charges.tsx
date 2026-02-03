@@ -34,6 +34,18 @@ const Charges = () => {
         setTaxSwitch,
         shippingSwitch,
         setShippingSwitch,
+        cgstSwitch,
+        setCgstSwitch,
+        igstSwitch,
+        setIgstSwitch,
+        sgstSwitch,
+        setSgstSwitch,
+        cgstType,
+        setCgstType,
+        igstType,
+        setIgstType,
+        sgstType,
+        setSgstType,
         discountType,
         setDiscountType,
         taxType,
@@ -62,7 +74,51 @@ const Charges = () => {
             {/* Charges */}
             <div className="flex flex-col gap-3 min-w-[20rem]">
                 {/* Switches */}
-                <div className="flex justify-evenly pb-6">
+                <div className="flex justify-evenly">
+                    <div>
+                        <Label>{_t("form.steps.summary.cgst")}</Label>
+
+                        <div>
+                            <div>
+                                <Switch
+                                    checked={cgstSwitch}
+                                    onCheckedChange={(value) => {
+                                        setCgstSwitch(value);
+                                    }}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <Label>{_t("form.steps.summary.sgst")}</Label>
+
+                        <div>
+                            <div>
+                                <Switch
+                                    checked={sgstSwitch}
+                                    onCheckedChange={(value) => {
+                                        setSgstSwitch(value);
+                                    }}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <Label>{_t("form.steps.summary.igst")}</Label>
+
+                        <div>
+                            <div>
+                                <Switch
+                                    checked={igstSwitch}
+                                    onCheckedChange={(value) => {
+                                        setIgstSwitch(value);
+                                    }}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <div className="flex justify-evenly pb-6">
                     <div>
                         <Label>{_t("form.steps.summary.discount")}</Label>
 
@@ -78,7 +134,7 @@ const Charges = () => {
                         </div>
                     </div>
 
-                    <div>
+                    {/* <div>
                         <Label>{_t("form.steps.summary.tax")}</Label>
 
                         <div>
@@ -91,7 +147,7 @@ const Charges = () => {
                                 />
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
                     <div>
                         <Label>{_t("form.steps.summary.shipping")}</Label>
@@ -117,6 +173,39 @@ const Charges = () => {
                             {formatNumberWithCommas(subTotal)} {currency}
                         </div>
                     </div>
+                    {cgstSwitch && (
+                        <ChargeInput
+                            label={_t("form.steps.summary.cgst")}
+                            name="details.cgstDetails.amount"
+                            switchAmountType={switchAmountType}
+                            type={cgstType}
+                            setType={setCgstType}
+                            currency={currency}
+                        />
+                    )}
+
+                     {sgstSwitch && (
+                        <ChargeInput
+                            label={_t("form.steps.summary.sgst")}
+                            name="details.sgstDetails.amount"
+                            switchAmountType={switchAmountType}
+                            type={sgstType}
+                            setType={setSgstType}
+                            currency={currency}
+                        />
+                    )}
+
+                    {igstSwitch && (
+                        <ChargeInput
+                            label={_t("form.steps.summary.igst")}
+                            name="details.igstDetails.amount"
+                            switchAmountType={switchAmountType}
+                            type={igstType}
+                            setType={setIgstType}
+                            currency={currency}
+                        />
+                    )}
+
                     {discountSwitch && (
                         <ChargeInput
                             label={_t("form.steps.summary.discount")}

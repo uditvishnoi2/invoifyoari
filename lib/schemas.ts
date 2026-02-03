@@ -141,6 +141,21 @@ const ShippingDetailsSchema = z.object({
     costType: fieldValidators.string,
 });
 
+const CgstDetailsSchema = z.object({
+    amount: fieldValidators.stringToNumberWithMax,
+    amountType: fieldValidators.string,
+});
+
+const IgstDetailsSchema = z.object({
+    amount: fieldValidators.stringToNumberWithMax,
+    amountType: fieldValidators.string,
+});
+
+const SgstDetailsSchema = z.object({
+    amount: fieldValidators.stringToNumberWithMax,
+    amountType: fieldValidators.string,
+});
+
 const SignatureSchema = z.object({
     data: fieldValidators.string,
     fontFamily: fieldValidators.string.optional(),
@@ -159,6 +174,9 @@ const InvoiceDetailsSchema = z.object({
     taxDetails: TaxDetailsSchema.optional(),
     discountDetails: DiscountDetailsSchema.optional(),
     shippingDetails: ShippingDetailsSchema.optional(),
+    cgstDetails: CgstDetailsSchema.optional(),
+    igstDetails: IgstDetailsSchema.optional(),
+    sgstDetails: SgstDetailsSchema.optional(),
     subTotal: fieldValidators.nonNegativeNumber,
     totalAmount: fieldValidators.nonNegativeNumber,
     totalAmountInWords: fieldValidators.string,

@@ -167,6 +167,18 @@ export const FORM_DEFAULT_VALUES = {
       cost: 0,
       costType: "amount",
     },
+    cgstDetails: {
+      amount: 0,
+      amountType: "amount",
+    },
+    igstDetails: {
+      amount: 0,
+      amountType: "amount",
+    },
+    sgstDetails: {
+      amount: 0,
+      amountType: "amount",
+    },
     paymentInformation: {
       bankName: "",
       accountName: "",
@@ -246,6 +258,18 @@ export const FORM_FILL_VALUES = {
     shippingDetails: {
       cost: 5,
       costType: "percentage",
+    },
+    cgstDetails: {
+      amount: 9,
+      amountType: "percentage",
+    },
+    igstDetails: {
+      amount: 0,
+      amountType: "amount",
+    },
+    sgstDetails: {
+      amount: 9,
+      amountType: "percentage",
     },
     paymentInformation: {
       bankName: "Bank Inc.",

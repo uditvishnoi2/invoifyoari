@@ -42,6 +42,9 @@ const WizardProgress = ({ wizard }: WizardProgressProps) => {
         !errors.details?.subTotal &&
         !errors.details?.totalAmount &&
         !errors.details?.discountDetails?.amount &&
+        !errors.details?.cgstDetails?.amount &&
+        !errors.details?.igstDetails?.amount &&
+        !errors.details?.sgstDetails?.amount &&
         !errors.details?.taxDetails?.amount &&
         !errors.details?.shippingDetails?.cost;
 
