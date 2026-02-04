@@ -379,7 +379,7 @@ export const InvoiceContextProvider = ({
             );
           }
         }
-
+        importedData.pdfTemplate = 1;
         // Reset form with imported data
         reset(importedData);
       } catch (error) {
