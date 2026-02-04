@@ -54,7 +54,8 @@
                 "bankName": "Nome della banca",
                 "accountName": "Intestatario del conto",
                 "accountNumber": "Numero Conto",
-                "ifscCode": "Codice IFSC",
+                "ifscCode": "IFSC Code",
+                "swiftCode": "SWIFT Code",
                 "branchAddress": "Indirizzo Filiale"
             },
             "summary": {

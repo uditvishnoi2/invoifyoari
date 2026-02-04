@@ -122,6 +122,7 @@ const PaymentInformationSchema = z.object({
     accountName: fieldValidators.stringOptional,
     accountNumber: fieldValidators.stringOptional,
     ifscCode: fieldValidators.stringOptional,
+    swiftCode: fieldValidators.stringOptional,
     branchAddress: fieldValidators.stringOptional,
 });
 

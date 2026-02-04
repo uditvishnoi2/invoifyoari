@@ -386,6 +386,15 @@ const InvoiceTemplate = (data: InvoiceType) => {
                                                     ?.ifscCode
                                             }
                                     </p>)}
+                                    {details.paymentInformation
+                                                ?.swiftCode && (
+                                        <p className="text-sm">
+                                            SWIFT Code:{" "}
+                                            {
+                                                details.paymentInformation
+                                                    ?.swiftCode
+                                            }
+                                    </p>)}
                                     {details.paymentInformation?.branchAddress && (
                                         <p className="text-sm">
                                             Branch Address:{" "}
