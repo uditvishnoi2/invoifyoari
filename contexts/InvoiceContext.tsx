@@ -378,8 +378,9 @@ export const InvoiceContextProvider = ({
               importedData.details.dueDate
             );
           }
+          importedData.details.pdfTemplate = 1;
         }
-        importedData.pdfTemplate = 1;
+        
         // Reset form with imported data
         reset(importedData);
       } catch (error) {
