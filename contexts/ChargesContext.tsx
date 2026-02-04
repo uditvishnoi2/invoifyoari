@@ -153,6 +153,18 @@ export const ChargesContextProvider = ({ children }: ChargesContextProps) => {
         if (shipping?.cost) {
             setShippingSwitch(true);
         }
+        
+        if (cgst?.amount) {
+            setCgstSwitch(true);
+        }
+
+        if (igst?.amount) {
+            setIgstSwitch(true);
+        }
+
+        if (sgst?.amount) {
+            setSgstSwitch(true);
+        }
 
         if (discount?.amountType == "amount") {
             setDiscountType("amount");
