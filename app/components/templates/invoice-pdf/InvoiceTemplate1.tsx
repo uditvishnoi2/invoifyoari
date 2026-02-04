@@ -212,7 +212,7 @@ const InvoiceTemplate = (data: InvoiceType) => {
                     <div className="grid grid-cols-2 sm:grid-cols-1 gap-3 sm:gap-2">
                         <dl className="grid sm:grid-cols-5 gap-x-3">
                             <dt className="col-span-3 font-semibold text-gray-800">
-                                Subtotal:
+                                Subtotal
                             </dt>
                             <dd className="col-span-2 text-gray-500">
 								{formatCurrency(details.subTotal, details.currency)}
@@ -222,7 +222,7 @@ const InvoiceTemplate = (data: InvoiceType) => {
                             details.discountDetails?.amount > 0 && (
                                 <dl className="grid sm:grid-cols-5 gap-x-3">
                                     <dt className="col-span-3 font-semibold text-gray-800">
-                                        Discount:
+                                        Discount
                                     </dt>
                                     <dd className="col-span-2 text-gray-500">
                                         {details.discountDetails.amountType ===
@@ -250,13 +250,16 @@ const InvoiceTemplate = (data: InvoiceType) => {
                             details.cgstDetails?.amount > 0 && (
                                 <dl className="grid sm:grid-cols-5 gap-x-3">
                                     <dt className="col-span-3 font-semibold text-gray-800">
-                                        CGST:
+                                        CGST{details.cgstDetails.amountType !==
+                                        "amount"
+                                            ? `@${details.cgstDetails.amount}%`
+                                            : ""}
                                     </dt>
                                     <dd className="col-span-2 text-gray-500">
                                         {details.cgstDetails.amountType ===
                                         "amount"
                                             ? `+ ${formatCurrency(details.cgstDetails.amount, details.currency)}`
-                                            : `+ ${details.cgstDetails.amount}%`}
+                                            : `+ ${formatCurrency((details.subTotal * details.cgstDetails.amount) / 100, details.currency)}`}
                                     </dd>
                                 </dl>
                             )}
@@ -265,13 +268,16 @@ const InvoiceTemplate = (data: InvoiceType) => {
                             details.sgstDetails?.amount > 0 && (
                                 <dl className="grid sm:grid-cols-5 gap-x-3">
                                     <dt className="col-span-3 font-semibold text-gray-800">
-                                        SGST:
+                                        SGST{details.sgstDetails.amountType !==
+                                        "amount"
+                                            ? `@${details.sgstDetails.amount}%`
+                                            : ""}
                                     </dt>
                                     <dd className="col-span-2 text-gray-500">
                                         {details.sgstDetails.amountType ===
                                         "amount"
                                             ? `+ ${formatCurrency(details.sgstDetails.amount, details.currency)}`
-                                            : `+ ${details.sgstDetails.amount}%`}
+                                            : `+ ${formatCurrency((details.subTotal * details.sgstDetails.amount) / 100, details.currency)}`}
                                     </dd>
                                 </dl>
                             )}
@@ -279,13 +285,16 @@ const InvoiceTemplate = (data: InvoiceType) => {
                             details.igstDetails?.amount > 0 && (
                                 <dl className="grid sm:grid-cols-5 gap-x-3">
                                     <dt className="col-span-3 font-semibold text-gray-800">
-                                        IGST:
+                                        IGST{details.igstDetails.amountType !==
+                                        "amount"
+                                            ? `@${details.igstDetails.amount}%`
+                                            : ""}
                                     </dt>
                                     <dd className="col-span-2 text-gray-500">
                                         {details.igstDetails.amountType ===
                                         "amount"
                                             ? `+ ${formatCurrency(details.igstDetails.amount, details.currency)}`
-                                            : `+ ${details.igstDetails.amount}%`}
+                                            : `+ ${formatCurrency((details.subTotal * details.igstDetails.amount) / 100, details.currency)}`}
                                     </dd>
                                 </dl>
                             )}
@@ -293,7 +302,7 @@ const InvoiceTemplate = (data: InvoiceType) => {
                             details.shippingDetails?.cost > 0 && (
                                 <dl className="grid sm:grid-cols-5 gap-x-3">
                                     <dt className="col-span-3 font-semibold text-gray-800">
-                                        Shipping:
+                                        Shipping
                                     </dt>
                                     <dd className="col-span-2 text-gray-500">
                                         {details.shippingDetails.costType ===
@@ -305,7 +314,7 @@ const InvoiceTemplate = (data: InvoiceType) => {
                             )}
                         <dl className="grid sm:grid-cols-5 gap-x-3">
                             <dt className="col-span-3 font-semibold text-gray-800">
-                                Total:
+                                Total
                             </dt>
                             <dd className="col-span-2 text-gray-500">
                                 {formatCurrency(details.totalAmount, details.currency)}
@@ -314,7 +323,7 @@ const InvoiceTemplate = (data: InvoiceType) => {
                         {details.totalAmountInWords && (
                             <dl className="grid sm:grid-cols-5 gap-x-3">
                                 <dt className="col-span-3 font-semibold text-gray-800">
-                                    Total in words:
+                                    Total in words
                                 </dt>
                                 <dd className="col-span-2 text-gray-500">
                                     <em>{details.totalAmountInWords}</em>

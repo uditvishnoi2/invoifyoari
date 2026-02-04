@@ -30,11 +30,11 @@ const defaultChargesContext = {
     setIgstSwitch: (newValue: boolean) => {},
     sgstSwitch: false,
     setSgstSwitch: (newValue: boolean) => {},
-    cgstType: "amount",
+    cgstType: "percentage",
     setCgstType: (newValue: SetStateAction<string>) => {},
-    igstType: "amount",
+    igstType: "percentage",
     setIgstType: (newValue: SetStateAction<string>) => {},
-    sgstType: "amount",
+    sgstType: "percentage",
     setSgstType: (newValue: SetStateAction<string>) => {},
     discountType: "amount",
     setDiscountType: (newValue: SetStateAction<string>) => {},
@@ -78,15 +78,15 @@ export const ChargesContextProvider = ({ children }: ChargesContextProps) => {
     const charges = {
         cgst: useWatch({ name: `details.cgstDetails`, control }) || {
             amount: 0,
-            amountType: "amount",
+            amountType: "percentage",
         },
         igst: useWatch({ name: `details.igstDetails`, control }) || {
             amount: 0,
-            amountType: "amount",
+            amountType: "percentage",
         },
         sgst: useWatch({ name: `details.sgstDetails`, control }) || {
             amount: 0,
-            amountType: "amount",
+            amountType: "percentage",
         },
         discount: useWatch({ name: `details.discountDetails`, control }) || {
             amount: 0,
@@ -136,9 +136,9 @@ export const ChargesContextProvider = ({ children }: ChargesContextProps) => {
     const [discountType, setDiscountType] = useState("amount");
     const [taxType, setTaxType] = useState("amount");
     const [shippingType, setShippingType] = useState("amount");
-    const [cgstType, setCgstType] = useState("amount");
-    const [igstType, setIgstType] = useState("amount");
-    const [sgstType, setSgstType] = useState("amount");
+    const [cgstType, setCgstType] = useState("percentage");
+    const [igstType, setIgstType] = useState("percentage");
+    const [sgstType, setSgstType] = useState("percentage");
 
     // When loading invoice, if received values, turn on the switches
     useEffect(() => {
@@ -277,9 +277,9 @@ export const ChargesContextProvider = ({ children }: ChargesContextProps) => {
 
         let discountAmountType: string = "amount";
         let taxAmountType: string = "amount";
-        let cgstAmountType: string = "amount";
-        let igstAmountType: string = "amount";
-        let sgstAmountType: string = "amount";
+        let cgstAmountType: string = "percentage";
+        let igstAmountType: string = "percentage";
+        let sgstAmountType: string = "percentage";
         let shippingCostType: string = "amount";
 
         let total: number = totalSum;

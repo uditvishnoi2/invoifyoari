@@ -53,19 +53,7 @@ export const NODEMAILER_PW = process.env.NODEMAILER_PW;
  */
 export const LOCALES = [
   { code: "en", name: "English" },
-  { code: "de", name: "Deutsch" },
-  { code: "it", name: "Italiano" },
-  { code: "es", name: "Español" },
-  { code: "ca", name: "Català" },
-  { code: "fr", name: "Français" },
-  { code: "ar", name: "العربية" },
-  { code: "pl", name: "Polish" },
-  { code: "pt-BR", name: "Português (Brasil)" },
-  { code: "tr", name: "Türkçe" },
-  { code: "zh-CN", name: "简体中文" },
-  { code: "ja", name: "日本語" },
-  { code: "nb-NO", name: "Norwegian (bokmål)" },
-  { code: "nn-NO", name: "Norwegian (nynorsk)" },
+  { code: "it", name: "Italiano" }
 ];
 export const DEFAULT_LOCALE = LOCALES[0].code;
 
@@ -152,7 +140,7 @@ export const FORM_DEFAULT_VALUES = {
         total: 0,
       },
     ],
-    currency: "USD",
+    currency: "₹",
     language: "English",
     taxDetails: {
       amount: 0,
@@ -169,15 +157,15 @@ export const FORM_DEFAULT_VALUES = {
     },
     cgstDetails: {
       amount: 0,
-      amountType: "amount",
+      amountType: "percentage",
     },
     igstDetails: {
       amount: 0,
-      amountType: "amount",
+      amountType: "percentage",
     },
     sgstDetails: {
       amount: 0,
-      amountType: "amount",
+      amountType: "percentage",
     },
     paymentInformation: {
       bankName: "",
@@ -244,7 +232,7 @@ export const FORM_FILL_VALUES = {
         total: 400,
       },
     ],
-    currency: "USD",
+    currency: "₹",
     language: "English",
     taxDetails: {
       amount: 15,
@@ -264,8 +252,8 @@ export const FORM_FILL_VALUES = {
       amountType: "percentage",
     },
     igstDetails: {
-      amount: 0,
-      amountType: "amount",
+      amount: 18,
+      amountType: "percentage",
     },
     sgstDetails: {
       amount: 9,
